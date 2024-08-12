@@ -15,7 +15,6 @@ const baseQuery = fetchBaseQuery({
 
 export const apiSlice = createApi({
   baseQuery,
-  // refetchOnFocus: true,
   tagTypes: ["Contacts", "Tags"],
   endpoints: (builder) => ({}),
 });

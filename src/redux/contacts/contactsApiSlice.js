@@ -68,12 +68,10 @@ export const contactsApiSlice = apiSlice.injectEndpoints({
           tags: newTag,
         },
       }),
-      // invalidatesTags: [{ type: "Tags", id: "LIST" }],
       invalidatesTags: ["Contacts"],
       onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
         try {
           await queryFulfilled;
-
           dispatch(
             apiSlice.util.updateQueryData("getContacts", arg.id, (draft) => {
               draft.tags.push(arg.newTag);

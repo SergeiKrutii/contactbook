@@ -17,16 +17,20 @@ const AddContactForm = (props) => {
 
   const CreateContactschema = Yup.object().shape({
     firstName: Yup.string()
+      .transform((value) => value.trim())
       .max(10, "Ім'я повинно бути не більше 10 символів")
       .required("Обов'язкове поле"),
     lastName: Yup.string()
+      .transform((value) => value.trim())
       .max(10, "Фамілія повинна бути не більше 10 символів")
       .required("Обов'язкове поле"),
     email: Yup.string()
+      .transform((value) => value.trim())
       .email("Не корректна почтова адресса")
       .matches(/(\.com|\.net)$/, "Обов'язково має бути .com або .net")
       .required("Обов'язкове поле"),
   });
+
   const formik = useFormik({
     initialValues: {
       firstName: "",

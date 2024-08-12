@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { StyledContainer } from "./StyledContainer";
 import { useMatchMedia } from "helpers/mediaQuery";
 
-const Container = ({ children, style }) => {
+const Container = ({ children }) => {
   const { isMobile } = useMatchMedia();
 
   return (

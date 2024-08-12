@@ -17,7 +17,7 @@ const AddTagForm = ({ contactId, tags, handleRefetch }) => {
     },
 
     onSubmit: async ({ tags }) => {
-      const tagsArray = tags.split(" ");
+      const tagsArray = tags.split(" ").filter((tag) => tag.trim() !== "");
 
       const newTags = {
         id: contactId,

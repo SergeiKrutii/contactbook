@@ -3,7 +3,7 @@ import { useGetContactsQuery } from "../../redux/contacts/contactsApiSlice";
 import { StyledContactList } from "./StyledContactList";
 
 const ContactList = (props) => {
-  const { data, isFetching } = useGetContactsQuery();
+  const { data } = useGetContactsQuery();
 
   const filteredData = data?.resources.filter((contact) => {
     if (
@@ -15,10 +15,6 @@ const ContactList = (props) => {
     }
     return contact;
   });
-
-  // if (isFetching || !filteredData) {
-  //   return <div>Loading...</div>;
-  // }
 
   return (
     <StyledContactList>
